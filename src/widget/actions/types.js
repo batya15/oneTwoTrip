@@ -1,0 +1,4 @@
+export default {
+    GET_FLIGHTS: 'GET_FLIGHTS',
+    SELECTED_CARRIER: 'SELECTED_CARRIER'
+}

@@ -4,14 +4,22 @@ var autoprefixer = require('autoprefixer');
 var nested = require('postcss-nested');
 
 module.exports = {
-    devtool: 'inline-source-map',
+    //devtool: 'inline-source-map',
     entry: [
-        'babel-polyfill',
-        'webpack-hot-middleware/client',
-        'app.js'
+       'babel-polyfill',
+       'app.js'
     ],
+    resolve: {
+        modulesDirectories: ['node_modules', 'src'],
+        extensions: ['', '.js', '.jsx']
+    },
+    output: {
+        path: path.join(__dirname, 'bin'),
+        filename: 'bundle.js'
+    },
     module: {
         loaders: [
+            { test: /\.json$/, loader: 'json' },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -41,8 +49,8 @@ module.exports = {
         ];
     },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
+        /*new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin()*/
     ]
 };
