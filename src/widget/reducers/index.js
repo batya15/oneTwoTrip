@@ -17,6 +17,8 @@ class Flight {
             carrier: data.carrier,
             from: data.direction.from,
             to: data.direction.to,
+            arrival: data.arrival,
+            departure: data.departure,
             _show: false
 
         }

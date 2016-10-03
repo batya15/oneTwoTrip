@@ -60,10 +60,12 @@ class Main extends React.Component {
                                 .map(((item, index) => (
                                     <div key={index} className={styles.flight}>
                                         <Paper>
-                                            <div className={styles.bg} style={{backgroundImage : `url(http://loremflickr.com/320/240/${item.to}_Aeroport)`}}>
-                                                <div className={styles.carrier}>{item.carrier}</div>
-                                                <div className={styles.from}>{item.from}</div>
-                                                <div className={styles.to}>{item.to}</div>
+                                            <div className={styles.bg} style={{backgroundImage : `url(http://loremflickr.com/320/240/${item.to},flag)`}}>
+                                                <div>{item.carrier}</div>
+                                                <div>{item.from}</div>
+                                                <div>{item.departure}</div>
+                                                <div>{item.to}</div>
+                                                <div>{item.arrival}</div>
                                             </div>
                                         </Paper>
                                     </div>
